@@ -66,3 +66,12 @@ Create Table Message (
 	Foreign key(destinataire) references Utilisateur(login) on delete cascade,
 	Foreign key(emetteur) references Utilisateur(login) on delete cascade
 );
+
+CREATE TABLE AnnonceSauv (
+	idUtilisateur int NOT NULL,
+	FOREIGN KEY(idUtilisateur) REFERENCES Utilisateur(idUtilisateur) ON DELETE CASCADE,
+	idAnnonce int NOT NULL,
+	FOREIGN KEY(idAnnonce) REFERENCES Annonce(idAnnonce) ON DELETE CASCADE,
+	Primary Key (idAnonce,idUtilisateur)
+	
+);
